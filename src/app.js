@@ -3,6 +3,8 @@ import carsRouter from "./app/module/cars.route.js";
 import cors from 'cors';
 import serviceRoutes from "./app/module/service/service.route.js";
 import driverRoutes from "./app/module/driver/driver.route.js";
+import BlogRouter from "./app/module/blog/blog.route.js";
+import userRouter from "./app/module/user/user.route.js";
  // Update the path accordingly
 
 export const app = express();
@@ -22,6 +24,9 @@ app.use(cors());
 app.use(carsRouter); // Use carsRouter for /api
 app.use(serviceRoutes); // Use carsRouter for /api
 app.use(driverRoutes); // Use carsRouter for /api
+app.use(carsRouter); 
+app.use(BlogRouter);
+app.use(userRouter)
 app.get('/', (req, res) => {
   res.send("Server is running");
 });
