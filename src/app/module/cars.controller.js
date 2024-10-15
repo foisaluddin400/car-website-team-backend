@@ -6,7 +6,7 @@ import carsServices from "./cars.service.js";
 const createCars = async (req, res, next) => {
   try {
     const result = await carsServices.createCars(req.body);
-    res.status(201).json({
+    res.status(200).json({
       success: true,
       message: "Cars created successfully",
       data: result,
