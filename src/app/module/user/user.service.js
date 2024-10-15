@@ -23,7 +23,7 @@ throw new Error("User not Exist")
   }
   const isPasswordMatched = await bcrypt.compare(data?.password, isUserExist?.password)
   if(isPasswordMatched === false){
-    throw new Error("Password did not match")
+    throw new Error("Password did not matche")
   }
 
   //admin check jwt
