@@ -1,6 +1,5 @@
 import Cars from "./cars.model.js";
 
-
 // Create a new car
 const createCars = async (data) => {
   const result = await Cars.create(data);

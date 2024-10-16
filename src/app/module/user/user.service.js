@@ -18,8 +18,9 @@ const inserUserIntoDB = async(data)=>{
 const loginUser = async(data)=>{
   // check databse exist email
   const isUserExist = await User.findOne({email:data?.email})
+
   if(!isUserExist ){
-throw new Error("User not Exist")
+  throw new Error("User not Exist")
   }
   const isPasswordMatched = await bcrypt.compare(data?.password, isUserExist?.password)
   if(isPasswordMatched === false){
@@ -30,11 +31,18 @@ throw new Error("User not Exist")
   const userObject ={
     userId: isUserExist?._id,
     role:isUserExist?.role,
-    emial: isUserExist?.email
+    email: isUserExist?.email
   }
-  const token = jwt.sign(userObject,"resturent223", {expiresIn:"1h"})
-  console.log(token)
-  return isUserExist
+  const token = jwt.sign(userObject, "resturent223", { expiresIn: "1h" });
+  return {
+    success: true,
+    data: {
+      email: isUserExist.email, 
+      role: isUserExist.role,
+      userId: isUserExist._id
+    },
+    token
+  };
 }
 
 
