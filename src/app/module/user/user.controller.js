@@ -26,7 +26,7 @@ const loginUser = async (req, res,next)=>{
     success:true,
     message: "User logged successfully",
     data:result?.data,
-    token: result?.data
+    token: result?.token
   });
   } catch (error) {
     next(error)

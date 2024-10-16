@@ -5,7 +5,14 @@ const carsSchema = new Schema({
     type: String,
     required: true,
   },
-  description: String,
+  img: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
   price: {
     type: Number,
     required: true,
@@ -33,6 +40,14 @@ const carsSchema = new Schema({
   
   description_title: {
     type: String,
+    required: true,
+  },
+  img_gallery: {
+    type: [String],
+    required: true,
+  },
+  car_Features: {
+    type: [String],
     required: true,
   },
   
