@@ -1,6 +1,6 @@
 import { model, Schema } from "mongoose";
 
-// 1st step
+
 
 
 const userSchema = new Schema({
