@@ -2,7 +2,7 @@ import express from 'express';
 import userController from './user.controller.js';
 
 
-// ei file router banacci
+// ei file router banacc
 
 const userRouter = express.Router();
 
