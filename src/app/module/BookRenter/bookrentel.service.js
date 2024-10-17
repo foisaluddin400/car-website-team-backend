@@ -1,4 +1,4 @@
-import { query } from "express";
+
 import BookRentel from "./bookrentel.model.js"
 
 const insertBookRentel = async(data)=>{

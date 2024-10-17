@@ -33,12 +33,40 @@ const getBookRentel = async(req,res,next)=>{
     }
 }
 
+// get single
+
+const getBookbyemail = async (req, res, next) => {
+    try {
+        
+        const { email } = req.query; 
+
+        
+        const result = await bookrentelService.getBookbyemail(email);
+
+        if (!result || result.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: "No bookings found for this email",
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "Get successfully",
+            data: result,
+        });
+    } catch (error) {
+        next(error);
+    }
+}
+
 
 
 const bookrentelControler = {
 
     insertBookRentel,
-    getBookRentel
+    getBookRentel,
+    getBookbyemail
 }
 
 export default bookrentelControler

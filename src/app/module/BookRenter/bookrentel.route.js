@@ -8,6 +8,8 @@ routes . post("/bookrentel",bookrentelControler.insertBookRentel)
 
 routes . get("/bookrentel",bookrentelControler.getBookRentel)
 
+routes.get("/bookrentel/email", bookrentelControler.getBookbyemail);
+
 
 
 const bookrentelRoutes =  routes
